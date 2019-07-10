@@ -200,6 +200,13 @@ def load_mnist():
     return (x_train, y_train), (x_test, y_test)
 
 
+def load_CIFAR():
+    # the data, shuffled and split between train and test sets
+    from keras.datasets import cifar10
+    # The data, split between train and test sets:
+    (x_train, y_train), (x_test, y_test) = cifar10.load_data()
+    return (x_train, y_train), (x_test, y_test)
+
 if __name__ == "__main__":
     import os
     import argparse
@@ -236,7 +243,7 @@ if __name__ == "__main__":
         os.makedirs(args.save_dir)
 
     # load data
-    (x_train, y_train), (x_test, y_test) = load_mnist()
+    (x_train, y_train), (x_test, y_test) = load_CIFAR()
 
     # define model
     model, eval_model, manipulate_model = CapsNet(input_shape=x_train.shape[1:],
