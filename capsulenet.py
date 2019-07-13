@@ -192,11 +192,19 @@ def load_mnist():
     # the data, shuffled and split between train and test sets
     from keras.datasets import mnist
     (x_train, y_train), (x_test, y_test) = mnist.load_data()
-
+    print(x_train.shape)
+    print(y_train.shape)
+    print(x_test.shape)
+    print(y_test.shape)
+    print(x_train[0])
     x_train = x_train.reshape(-1, 28, 28, 1).astype('float32') / 255.
     x_test = x_test.reshape(-1, 28, 28, 1).astype('float32') / 255.
     y_train = to_categorical(y_train.astype('float32'))
     y_test = to_categorical(y_test.astype('float32'))
+    print(x_train.shape)
+    print(y_train.shape)
+    print(x_test.shape)
+    print(y_test.shape)
     return (x_train, y_train), (x_test, y_test)
 
 
@@ -204,7 +212,15 @@ def load_CIFAR():
     # the data, shuffled and split between train and test sets
     from keras.datasets import cifar10
     # The data, split between train and test sets:
+    
     (x_train, y_train), (x_test, y_test) = cifar10.load_data()
+    print(x_train.shape)
+    print(y_train.shape)
+    print(x_test.shape)
+    print(y_test.shape)
+    print(x_train[0])
+    x_train = x_train[:,:,:,1]
+    x_test = x_test[:,:,:,1]
     x_train = x_train.reshape(-1, 28, 28, 1).astype('float32') / 255.
     x_test = x_test.reshape(-1, 28, 28, 1).astype('float32') / 255.
     y_train = to_categorical(y_train.astype('float32'))
