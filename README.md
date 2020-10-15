@@ -1,5 +1,3 @@
-This implementation is fork of https://github.com/XifengGuo/CapsNet-Keras , applied to CIFAR-10 dataset.
-
 # CapsNet-Keras
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/XifengGuo/CapsNet-Keras/blob/master/LICENSE)
 

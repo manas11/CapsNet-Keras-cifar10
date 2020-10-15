@@ -11,7 +11,7 @@ import keras.backend as K
 import tensorflow as tf
 from keras import initializers, layers
 
-
+# extend class Layer
 class Length(layers.Layer):
     """
     Compute the length of vectors. This is used to compute a Tensor that has the same shape with y_true in margin_loss.
